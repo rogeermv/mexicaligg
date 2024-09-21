@@ -20,6 +20,7 @@ module tt_um_uabc_test2031 (
     reg [3:0]  display_value;    
     wire [6:0] segment_reg;
     assign uo_out[6:0] = segment_reg;
+    assign uo_out[7] = 1'b0;
 
     always @(posedge clk) begin
         if (!rst_n) begin
