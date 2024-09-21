@@ -18,7 +18,8 @@ module tt_um_uabc_test2031 (
     
     reg [23:0] counter;          
     reg [3:0]  display_value;    
-    reg [6:0]  segment_reg;      
+    wire [6:0] segment_reg;
+    assign uo_out[6:0] = segment_reg;
 
     always @(posedge clk) begin
         if (!rst_n) begin
@@ -38,7 +39,6 @@ module tt_um_uabc_test2031 (
 
     seg7 seg7(.digit(display_value), .segments(segment_reg));
     
-  assign uo_out = segment_reg; 
   assign uio_out = 0;
   assign uio_oe  = 0;
 
